@@ -1,0 +1,27 @@
+<div class="container mt-4">
+  <div class="card p-4 mb-4">
+    <h1><%= @restaurant.name %></h1>
+    <p class="text-muted"><%= @restaurant.category %> · <%= @restaurant.address %></p>
+    <p><i class="fa fa-phone"></i> <%= @restaurant.phone_number %></p>
+  </div>
+
+  <h2>Reviews</h2>
+  <% @restaurant.reviews.each do |review| %>
+    <div class="card mb-2 p-3">
+      <p><%= review.content %></p>
+      <p>Rating: <%= review.rating %>/5</p>
+    </div>
+  <% end %>
+
+  <h3 class="mt-4">Add a review</h3>
+  <div class="card p-3">
+    <%= simple_form_for [@restaurant, Review.new] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating %>
+      <%= f.submit "Post review", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+
+  <%= link_to "Back to restaurants", restaurants_path, class: "text-muted mt-3 d-inline-block" %>
+</div>
+

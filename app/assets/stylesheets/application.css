@@ -8,3 +8,14 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+body {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-VjPWM8TynQoidgVaU7qM75HJP9BaZm5NDw&s');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+.card {
+  background-color: #fdf3d0 !important;
+  border: 1px solid #e8c97a;
+}
